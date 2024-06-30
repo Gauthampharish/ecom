@@ -4,6 +4,9 @@ import com.ecommerce.customer.dto.CustomerDto;
 import com.ecommerce.customer.model.Customer;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CustomerMapper {
 
@@ -22,5 +25,9 @@ public class CustomerMapper {
                 .lastname(customerDto.getLastName())
                 .email(customerDto.getEmail())
                 .build();
+    }
+
+    public List<CustomerDto> toDtos(List<Customer> customers) {
+        return customers.stream().map(this::toDto).collect(Collectors.toList());
     }
 }
