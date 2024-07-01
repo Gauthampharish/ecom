@@ -33,7 +33,7 @@ public class CustomerController {
     public ResponseEntity<CustomerResponse<CustomerDto>> getCustomer(@PathVariable String id) {
         CustomerDto customer = customerService.getCustomer(id);
         CustomerResponse<CustomerDto> response = new CustomerResponse<>(CustomerResponseMessage.CUSTOMER_RETRIEVED_SUCCESSFULLY.getMessage(), customer);
-        return  ResponseEntity.status(HttpStatus.OK).body(response);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @PutMapping("/{id}")
@@ -44,7 +44,7 @@ public class CustomerController {
     }
 
     @GetMapping
-    public  ResponseEntity<CustomerResponse<List<CustomerDto>>>listCustomers(){
+    public ResponseEntity<CustomerResponse<List<CustomerDto>>> listCustomers() {
         List<CustomerDto> customers = customerService.listCustomers();
         CustomerResponse<List<CustomerDto>> response = new CustomerResponse<>(CustomerResponseMessage.CUSTOMERS_RETRIEVED_SUCCESSFULLY.getMessage(), customers);
         return ResponseEntity.status(HttpStatus.OK).body(response);

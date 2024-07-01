@@ -13,8 +13,7 @@ public enum CustomerResponseMessage {
     CUSTOMER_NOT_DELETED("Customer not deleted"),
 
     CUSTOMER_NOT_RETRIEVED("Customer not retrieved"),
-    CUSTOMERS_NOT_RETRIEVED("Customers not retrieved")
-    ;
+    CUSTOMERS_NOT_RETRIEVED("Customers not retrieved");
 
     private final String message;
 

@@ -27,7 +27,6 @@ public class CustomerMapper {
                 .build();
     }
 
-    public List<CustomerDto> toDtos(List<Customer> customers) {
-        return customers.stream().map(this::toDto).collect(Collectors.toList());
-    }
-}
+ public List<CustomerDto> toDtos(List<Customer> customers) {
+    return customers.stream().map(this::toDto).toList();
+}}

@@ -35,10 +35,10 @@ public class CustomerService {
     public CustomerDto updateCustomer(String id, CustomerDto customerDto) {
         Customer customer = customerRepository.findById(id).orElseThrow(() -> new NoSuchElementException(CustomerResponseMessage.CUSTOMER_NOT_FOUND.getMessage()));
         Customer updatedCustomer = Customer.builder()
-            .firstname(customerDto.getFirstName())
-            .lastname(customerDto.getLastName())
-            .email(customerDto.getEmail())
-            .build();
+                .firstname(customerDto.getFirstName())
+                .lastname(customerDto.getLastName())
+                .email(customerDto.getEmail())
+                .build();
 
         Customer savedCustomer = customerRepository.save(updatedCustomer);
         return customerMapper.toDto(savedCustomer);
